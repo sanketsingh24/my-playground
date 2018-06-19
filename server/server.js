@@ -46,7 +46,9 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
+import polls from './routes/poll.routes';
 import dummyData from './dummyData';
+import dummypolls from './dummyPolls';      
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -62,6 +64,7 @@ if (process.env.NODE_ENV !== 'test') {
 
     // feed some dummy data in DB.
     dummyData();
+    dummypolls();
   });
 }
 
@@ -71,6 +74,7 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 app.use('/api', posts);
+app.use('/api', polls);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {

@@ -47,5 +47,22 @@ export default (
         });
       }}
     />    
+    <Route
+      path="/polls"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Polls/pages/PollListPage/PollListPage').default);
+        });
+      }}
+    />
+    <Route
+      path="/polls/:slug-:cuid"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Polls/pages/PollDetailPage/PollDetailPage').default);
+        });
+      }}
+    />
   </Route>
+
 );
