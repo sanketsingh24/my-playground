@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
+const passport = require('passport')
+const session = require('express-session')
 
 // Initialize the Express App
 const app = new Express();
@@ -68,6 +70,12 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
+app.use(session({
+  secret: 'mySecretKey',
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 // Apply body Parser and server public assets and routes
 app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
