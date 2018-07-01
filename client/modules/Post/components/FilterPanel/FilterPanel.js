@@ -2,10 +2,12 @@ import React, { PropTypes, Component } from 'react';
 import {Button} from 'material-ui';
 import { Link } from 'react-router';
 
+import styles from './FilterPanel.css';
+
 export default class FilterPanel extends Component {
 	render() {
 		return(
-			<div>
+			<span className={styles[".filter"]}>
 				<Button variant="raised" color="primary" >
 					<Link to="/">
 						Debates
@@ -16,7 +18,7 @@ export default class FilterPanel extends Component {
 						Polls
 					</Link>
 				</Button>
-			</div>
+			</span>
 		)
 	}
 }

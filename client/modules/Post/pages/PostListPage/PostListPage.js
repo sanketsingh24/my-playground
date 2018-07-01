@@ -38,13 +38,14 @@ class PostListPage extends Component {
       <div>
         <PostCreateWidget addpost={this.handleAddpost} showAddpost={this.props.showAddpost} />
         <Grid container spacing={24}>
-          <Grid item xs={6} sm={2}>
+          <Grid item xs={6} sm={12}>
             <FilterPanel/>
           </Grid>
-          <Grid item xs={6} sm={8}>
+          <br />
+          <Grid item xs={6} sm={9}>
             <PostList handleDeletepost={this.handleDeletepost} posts={this.props.posts} />
           </Grid>
-          <Grid item xs={6} sm={2}>
+          <Grid item xs={6} sm={3}>
             <Trending/>
           </Grid>
         </Grid>

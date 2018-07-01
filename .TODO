@@ -1,11 +1,11 @@
 TODO: 
 [] Make POLLS in client working (1)
 [] Make trending panel
-[] User page& popper
-[] Notif page & popper
+[x] User page& popper
+[x] Notif page & popper
 [] Search
 [] Filter Panel
-[] Login and auth
-[] Secure
+[] Login and auth {to be linked}
+[] Secure {hmm}
 
 [] PWA

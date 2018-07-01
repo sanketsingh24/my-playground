@@ -123,7 +123,7 @@ export class Header extends React.Component {
           <Link to="/" ><FormattedMessage id="siteTitle" /></Link>
         </h1>
         {
-          this.context.router.isActive('/', true)
+          this.context.router.isActive('/posts', true)
             ? <a className={styles['add-post-button']} href="#" onClick={this.props.toggleAddPost}><FormattedMessage id="addPost" /></a>
             : null
         }
